@@ -9,7 +9,7 @@ This template should help get you started developing with Vue 3 in Vite.
 ## Recommended Browser Setup
 
 - Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
+  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
   - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
 - Firefox:
   - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
@@ -49,6 +49,68 @@ npm run test:unit
 
 ### Lint with [ESLint](https://eslint.org/)
 
-```sh
-npm run lint
+---
+
+# Vue Tic-Tac-Toe App
+
+A simple, accessible, and responsive Tic-Tac-Toe game built with Vue 3, Vite, TypeScript, Pinia, and Vue Router.
+
+## Features
+
+- Play Tic-Tac-Toe against another player (X vs O)
+- Accessible UI: keyboard navigation, ARIA roles, live status updates
+- Mobile responsive design
+- Highlights winning cells
+- Game status: win, draw, ongoing
+- Reset button to start a new game
+- Unit tested game logic and components
+
+## Usage
+
+### Play the game
+
+- Visit `/tic-tac-toe` route in your browser
+- Click or use keyboard to select cells
+- First to get three in a row wins
+- Reset to play again
+
+## Accessibility
+
+- All interactive elements are keyboard accessible
+- ARIA roles and live regions for screen readers
+- Winning cells are visually highlighted
+
+## Mobile Support
+
+- Responsive grid and controls for small screens
+- Touch-friendly buttons
+
+## Testing
+
+- Unit tests for board, cell, and store logic
+- Run tests:
+
+```bash
+npm run test:unit
 ```
+
+## File Structure
+
+- `src/views/TicTacToeView.vue`: Main game view
+- `src/components/`: Board, Cell, Status, Reset components
+- `src/stores/tictactoe.ts`: Pinia store for game logic
+- `src/assets/main.css`: Styles and responsive design
+- `src/components/__tests__/`: Component tests
+- `src/stores/__tests__/`: Store tests
+
+## Game Rules
+
+- Players take turns placing X or O in empty cells
+- First to get three in a row (vertical, horizontal, diagonal) wins
+- If all cells are filled and no winner, game is a draw
+- Cannot select occupied cells or play after game ends
+- Game can be reset at any time
+
+---
+
+Built with Vue 3, Vite, TypeScript, Pinia, and Vue Router.
