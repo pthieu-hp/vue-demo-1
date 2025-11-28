@@ -113,4 +113,58 @@ npm run test:unit
 
 ---
 
+# Enquiry Form
+
+A stepwise, accessible, and responsive enquiry form built with Vue 3, Vite, TypeScript, and Zod.
+
+## Usage
+
+- Visit the `/enquiry-form` route in your browser.
+- Fill out all required fields (名前, メールアドレス, お問い合わせ内容, 利用規約同意).
+- Optional fields: 電話番号, 添付ファイル (PDF/JPG/PNG, max 5MB).
+- Error messages are shown in Japanese below each field if invalid.
+- The submit button is disabled until all required fields are valid and ToS is agreed.
+- On submit, a confirmation alert displays entered details (except file).
+- Submitted data is saved to localStorage as an array of enquiries.
+- Download all submitted enquiries as `enquiries.json` using the provided button.
+- The form resets after successful submission.
+
+## Accessibility
+
+- All fields and controls have ARIA attributes and labels for screen readers.
+- Required fields are visually marked and announced.
+- Error messages use `aria-live` for polite updates.
+- Keyboard navigation is fully supported (tab, enter, space).
+- Color contrast meets WCAG AA standards for text, backgrounds, and error states.
+- ToS section is scrollable and accessible with keyboard and screen readers.
+
+## Responsiveness & Dark Mode
+
+- The form layout adapts to mobile and desktop screens.
+- Styles use CSS variables for easy theming and dark mode support.
+- The textarea can only be resized vertically for better UX.
+- Minimal, clean design for clarity and usability.
+
+## Validation
+
+- All validation is handled by Zod schema:
+  - 名前: required, 2-50 chars
+  - メールアドレス: required, valid email
+  - 電話番号: optional, must start with 0, 10-11 digits, no hyphens
+  - お問い合わせ内容: required, min 10 chars
+  - 添付ファイル: optional, PDF/JPG/PNG only, max 5MB
+  - 利用規約: must be checked
+- Error messages are shown in Japanese and auto-focus the first invalid field on submit.
+
+## Testing
+
+- All major features are covered by unit tests in `src/components/__tests__/EnquiryForm.spec.ts`.
+- Run tests:
+
+```bash
+npm run test:unit
+```
+
+---
+
 Built with Vue 3, Vite, TypeScript, Pinia, and Vue Router.

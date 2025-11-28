@@ -1,5 +1,5 @@
-import { createRouter, createWebHistory } from "vue-router"
-import HomeView from "../views/HomeView.vue"
+import { createRouter, createWebHistory } from "vue-router";
+import HomeView from "../views/HomeView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,7 +22,12 @@ const router = createRouter({
       name: "tic-tac-toe",
       component: () => import("../views/TicTacToeView.vue"),
     },
+    {
+      path: "/enquiry-form",
+      name: "EnquiryForm",
+      component: () => import("@/views/EnquiryFormView.vue"),
+    },
   ],
-})
+});
 
-export default router
+export default router;

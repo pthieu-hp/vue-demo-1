@@ -22,7 +22,7 @@
 - There should be slots for displaying validation error messages below each field.
 - Submit button disabled until all required fields are valid and ToS is agreed.
 - On submission, show a confirmation alert with entered details (except file). Then reset the form.
-- Submitted data are saved to a JSON file for demo purposes and possible future use.
+- Submitted data are saved to localStorage as an array of enquiries. A button is provided to download all enquiries as a single JSON file (`enquiries.json`).
 - Discard file uploads, keep the file name and size only.
 
 ## Instructions
@@ -30,9 +30,8 @@
 - Create a new view: `src/views/EnquiryFormView.vue`
 - Add route: `/enquiry-form` in `src/router/index.ts`
 - Create form component: `src/components/EnquiryForm.vue`
-- If the form is split into subcomponents (e.g., file upload, ToS box), create them in `src/components/` and import into `EnquiryForm.vue`
 - Use Zod for validation (add to `package.json` if missing)
-- Save submitted data to a JSON file in `public/` for demo purposes
+- Save submitted data to localStorage as an array. Provide a button to download all enquiries as a JSON file for demo purposes.
 - Use ARIA attributes and roles for all interactive elements
 - Use TailwindCSS or scoped CSS for styling and responsiveness
 - Use the site's CSS variables for color and background
@@ -49,6 +48,7 @@
 - Only the enquiry form page and related components
 - No backend integration unless specified
 - Demo-level implementation
+- Subcomponents (FileUpload, ToSBox) are not required for this demo; all logic is implemented inline in EnquiryForm.vue.
 
 ## Preferences
 
@@ -72,6 +72,7 @@
   - Browser alert.
 - Where should the saved JSON file be stored (localStorage, download, or in `public/`)?
   - In `public/` for demo purposes.
+  - In localStorage for demo purposes. Provide a download button for all data as JSON.
 - Any specific error message wording or format?
   - No, just use clear, concise messages in Japanese.
 - Should the form auto-focus the first invalid field on submit?
@@ -86,59 +87,7 @@
 - If the form is split into subcomponents (e.g., file upload, ToS box), create them in `src/components/` and import into `EnquiryForm.vue`.
 - Add Zod to `package.json` if missing.
 - Save submitted data to a JSON file (see clarification above).
-- Use ARIA attributes and roles for all interactive elements.
-- Use TailwindCSS or scoped CSS for styling and responsiveness.
-- Use the site's CSS variables for color and background.
-- Ensure WCAG AA compliance (labels, ARIA, keyboard navigation, color contrast).
-- Add unit tests for validation and accessibility.
-- Document usage in README.
-- Auto-focus the first invalid field on submit.
-- Use browser alert for confirmation.
-- Error messages: clear, concise, in Japanese.
-- Minimal, clean design; no animation or transition required.
-
-## Scope
-
-- Only the enquiry form page and related components
-- No backend integration unless specified
-- Demo-level implementation
-
-## Preferences
-
-- Use Composition API and TypeScript
-- Follow existing code style and linting rules
-- Use `@/` alias for imports
-- Place tests in `src/components/__tests__/`
-- [Comment for user: Any preferences for UI style, layout, or additional features?]
-
----
-
-<!-- Please fill in the comments above to clarify requirements. -->
-
-### Clarifications Needed
-
-- Please specify any preferred UI style (e.g., minimal, material, etc.), color scheme, or branding.
-  - None specified; proceed with a clean, minimal design.
-- Should the ToS checkbox be required before any field is filled, or only before submission?
-  - Only before submission.
-- Should the confirmation alert be modal, toast, or browser alert?
-  - Browser alert.
-- Where should the saved JSON file be stored (localStorage, download, or in `public/`)?
-  - In `public/` for demo purposes.
-- Any specific error message wording or format?
-  - No, just use clear, concise messages in Japanese.
-- Should the form auto-focus the first invalid field on submit?
-  - Yes, to improve accessibility and user experience.
-- Any animation or transition preferences?
-  - No specific preferences; keep it simple.
-- Should the form support dark mode?
-  - I reckon the repo itself is in dark mode, but check again before proceeding. Follow the existing site style (if there are both modes, implement both).
-
-### Updated Instructions
-
-- If the form is split into subcomponents (e.g., file upload, ToS box), create them in `src/components/` and import into `EnquiryForm.vue`.
-- Add Zod to `package.json` if missing.
-- Save submitted data to a JSON file (see clarification above).
+- Save submitted data to localStorage as an array. Provide a button to download all data as JSON.
 - Use ARIA attributes and roles for all interactive elements.
 - Use TailwindCSS or scoped CSS for styling and responsiveness.
 - Use the site's CSS variables for color and background.
@@ -257,9 +206,8 @@ flowchart TD
 - Create a new view: `src/views/EnquiryFormView.vue`.
 - Add route: `/enquiry-form` in `src/router/index.ts`.
 - Create form component: `src/components/EnquiryForm.vue`.
-- If the form is split into subcomponents (e.g., file upload, ToS box), create them in `src/components/` and import into `EnquiryForm.vue`.
 - Use Zod for validation (add to `package.json` if missing).
-- Save submitted data to a JSON file in `public/` for demo purposes.
+- Save submitted data to localStorage as an array. Provide a button to download all enquiries as a JSON file for demo purposes.
 - Use ARIA attributes and roles for all interactive elements.
 - Use TailwindCSS or scoped CSS for styling and responsiveness.
 - Use the site's CSS variables for color and background.

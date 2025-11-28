@@ -13,6 +13,7 @@ import { RouterLink, RouterView } from 'vue-router'
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/tic-tac-toe">Tic Tac Toe</RouterLink>
+        <RouterLink to="/enquiry-form">Enquiry Form</RouterLink>
       </nav>
     </div>
   </header>
