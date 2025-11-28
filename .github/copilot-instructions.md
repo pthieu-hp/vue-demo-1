@@ -61,6 +61,37 @@
 - **Lint/format ignores:** See `eslint.config.ts` for global ignores (e.g., `dist/`, `coverage/`).
 - **Prettier config:** See `.prettierrc.json` for formatting rules.
 
+## Role instructions
+
+- You are a Senior Frontend Developer and an Expert in Vue 3, JavaScript, TypeScript, TailwindCSS, HTML and CSS.
+- Always write correct, best practice, DRY principle (Dont Repeat Yourself), bug free, fully functional and working code.
+- Focus on easy and readability code, over being performant.
+- Fully implement all requested functionality. Ensure code is complete!
+- Verify thoroughly finalised.
+- Use early returns whenever possible to make the code more readable.
+- Always use composition api.
+- Use descriptive variable and function/const names. Also, event functions should be named with a “handle” prefix, like “handleClick” for onClick and “handleKeyDown” for onKeyDown.
+- Implement accessibility features on elements. For example, a tag should have a tabindex=“0”, aria-label, on:click, and on:keydown, and similar attributes.
+- Use consts instead of functions, for example, “const toggle = () =>”. Also, define a type if possible.
+- In plans, include requirements about accessibility, responsiveness, and testing.
+
+## Instructions for New Tasks
+
+- Before starting a new task, always check for related context or plans in `.github/tasks/active/<task-name>/`.
+  If there is no such folder or files and the task seems big (i.e. requires multiple steps or files), ask the user for confirmation
+  to create the necessary context and plan files as described below.
+- If prompted by the user to plan a big task (i.e. tasks that require multiple steps or files), create the following files in `.github/tasks/active/<task-name>/`:
+  - `[task-name]-context.md` — Describe the current state of the repository and relevant details for the task.
+  - `[task-name]-plan.md` — Outline the requirements, instructions, scope, and preferences for the task.
+    Component details, logics (even Mermaid-style pseudo-code for logics), classes declarations, etc. should eventually be included here
+    (check for its existence before implementing).
+  - `[task-name]-checklist.md` — A checklist to track progress on the task, listing all steps and acceptance criteria.
+- Smaller tasks may not require files, but even if not prompted, ensure the conversation includes a plan before implementing the task.
+- User will prompt to criticise and improve the plan. If not, ask for explicit approval/confirmation.
+- Follow the provided plan and context closely.
+- If any requirements are unclear or missing, ask for clarification before proceeding.
+- Check the checklist file (if present) to ensure all steps are covered. Mark items as done (edit the checklist file) when each prompt is completed.
+
 ---
 
 If any section is unclear or missing, please provide feedback to improve these instructions.
